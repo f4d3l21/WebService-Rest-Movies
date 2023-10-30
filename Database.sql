@@ -7,17 +7,15 @@ CREATE TABLE films (
 );
 
 -- Table pour les acteurs et réalisateurs 
--- J'utilise une seule table car un acteur peut être un réalisateur et invertse
 CREATE TABLE personnes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(128) NOT NULL,
     prenom VARCHAR(128) NOT NULL,
     date_naissance DATE NOT NULL,
-    type ENUM('acteur', 'realisateur') NOT NULL  -- Indique si la personne est un acteur, un réalisateur ou les deux
+    type ENUM('acteur', 'realisateur') NOT NULL  -- Indique si la personne est un acteur, un réalisateur
 );
 
 -- Table de liaison entre les films et les personnes
--- Cela permet de gererr les acteurs d'un film et le réalisateur d'un film
 CREATE TABLE films_personnes (
     film_id INT NOT NULL,
     personne_id INT NOT NULL,

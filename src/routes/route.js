@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// Importation des modèles
+// Mdodels 
 const Film = require('../models/filmModel');
 const Personne = require('../models/personneModel');
 
@@ -35,7 +35,7 @@ router.delete('/films/:id', async (req, res) => {
     res.send('Film supprimé');
 });
 
-// Routes pour les personnes (acteurs/réalisateurs)
+// Routes pour les personnes
 router.get('/personnes', async (req, res) => {
     const personnes = await Personne.getAll();
     res.json(personnes);
